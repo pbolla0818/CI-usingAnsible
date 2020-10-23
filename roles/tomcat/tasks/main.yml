@@ -40,14 +40,15 @@
 
   notify: restart tomcat
 
-  - name: Install Tomcat init script
-    copy: 
-    src: tomcat-initscript.sh 
-    dest: /etc/init.d/tomcatd 
-    mode: 0755
-   - name: enable service
+- name: Install Tomcat init script
+  copy: 
+  src: tomcat-initscript.sh 
+  dest: /etc/init.d/tomcatd 
+  mode: 0755
+  
+  - name: enable service
   shell: update-rc.d tomcatd defaults 95
-
+  
   notify: restart tomcat
 
 - name: wait for tomcat to start

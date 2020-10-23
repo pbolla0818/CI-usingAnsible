@@ -46,7 +46,7 @@
   dest: /etc/init.d/tomcatd 
   mode: 0755
   
-  - name: enable service
+- name: enable service
   shell: update-rc.d tomcatd defaults 95
   
   notify: restart tomcat
